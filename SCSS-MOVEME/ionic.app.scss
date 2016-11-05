@@ -1,0 +1,66 @@
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+@import "../www/lib/ionic/scss";
+.topImg {
+	margin: 0px -10px 0 -10px;
+}
+
+.topImgContainer {
+	margin: 0px -10px 0px -10px;
+	max-height: 100px;
+	overflow: hidden;
+}
+
+.clearButton {
+	background: none}
+;
+.topHeader {
+	margin: -10px -10px 20px -10px;
+	width: calc(100% + 20px);
+	padding: 10px;
+	background-color: #387EF5;
+}
+
+.topHeaderImageContainer {
+	padding: 5px;
+	border-radius: 5px;
+	background-color: white;
+	border: 1px solid white;
+	min-height: 20px;
+}
+
+.topHeaderTextContainer {
+	padding: 5px 5px 5px 10px;
+}
+
+.Header {
+	margin-top: 0px;
+}
+
+.subHeader {
+	margin-top: -12px;
+	font-size: 0.8em;
+	font-style: italic;
+}
+
+.contentHeaderContainer {
+	margin: -10px -10px 0 -10px;
+	max-height: 110px;
+	overflow: hidden;
+}
+
+.contentBannerContainer {
+	margin: 0px -10px 20px -10px;
+	padding: 5px;
+	background-color: #DBDBDB;
+	border-bottom: 1px solid black;
+}
+
+.contentBannerHeading {
+	margin: 0px;
+}
+
+.contentBannerSubHeading {
+	margin: 0px;
+	font-size: 0.8em;
+}
+

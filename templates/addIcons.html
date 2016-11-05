@@ -1,0 +1,18 @@
+<ion-view title="Add Icons" id="page3">
+  <ion-content padding="true" class="has-header">
+    <form id="addIcons-form1" class="list">
+      <label class="item item-input" id="addIcons-input1">
+        <span class="input-label">Title</span>
+        <input type="text" placeholder="" ng-model="icon.title">
+      </label>
+      <label class="item item-input" id="addIcons-input2">
+        <span class="input-label">Base64</span>
+        <input type="text" placeholder="" ng-model="icon.base64">
+      </label>
+    </form>
+    <div>
+      <img src="{{icon.base64}}" width="100%" height="auto" style="display: block; margin-left: auto; margin-right: auto;" ng-if="icon.base64 !== null">
+    </div>
+    <button id="addIcons-button1" ng-click="saveIcon()" class="button button-positive  button-block">Save Icons</button>
+  </ion-content>
+</ion-view>

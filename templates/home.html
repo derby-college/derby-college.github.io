@@ -1,0 +1,67 @@
+<ion-view title="Home" id="page1">
+  <ion-nav-buttons side="right" class="has-header">
+    <button class="button icon No Icon" ng-click="toggleAdmin()"> Edit</button>
+  </ion-nav-buttons>
+  <ion-content padding="true" class="has-header">
+    <ion-refresher pulling-text="Pull to refresh..." icon="ios-small" on-refresh="doRefresh()"></ion-refresher>
+    <div id="home-container13" class="topHeader row">
+      <input type="file" id="myFile" accept="image/*" placeholder="" ng-model="titleImage" onchange="angular.element(this).scope().uploadImg(this.files)" style="display:none">
+      <div id="home-container14" onclick="document.all['myFile'].click()" ng-if="admin" class="col-20 col-top topHeaderImageContainer">
+        <div>
+          <img src="{{content.titleImage}}" width="100%" height="auto" style="display: block; margin-left: auto; margin-right: auto;" ng-if="content.titleImage !== null">
+        </div>
+      </div>
+      <div id="home-container10" ng-if="!admin" class="col-20 col-top topHeaderImageContainer">
+        <div>
+          <img src="{{content.titleImage}}" width="100%" height="auto" style="display: block; margin-left: auto; margin-right: auto;" ng-if="content.titleImage !== null">
+        </div>
+      </div>
+      <div id="home-container15" class="col-80 col-top topHeaderTextContainer">
+        <h5 id="home-heading1" style="color:#FFFFFF;" class="Header">{{content.title}}</h5>
+        <div id="home-markdown10" class="show-list-numbers-and-dots subHeader">
+          <p style="color:#FFFFFF;">{{content.subTitle}}</p>
+        </div>
+      </div>
+    </div>
+    <form id="home-form6" class="list" ng-if="admin">
+      <label class="item item-input" id="home-input7">
+        <span class="input-label">Title</span>
+        <input type="text" placeholder="" ng-model="content.title">
+      </label>
+      <label class="item item-input" id="home-input8">
+        <span class="input-label">SubTitle</span>
+        <input type="text" placeholder="" ng-model="content.subTitle">
+      </label>
+    </form>
+    <div id="home-markdown7" ng-if="content.text1" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">{{content.text1}}</p>
+    </div>
+    <form id="home-form4" class="list" ng-if="admin">
+      <label class="item item-input" id="home-input5">
+        <span class="input-label">Text</span>
+        <input type="text" placeholder="" ng-model="content.text1">
+      </label>
+    </form>
+    <div id="home-container1" ng-repeat="row in menu.rows" class="row">
+      <div id="home-container3" ng-click="open(link.type,link.id)" ng-repeat="link in row" class="col-33 button clearButton">
+        <div>
+          <img src="{{iconFactory[link.icon].base64}}" width="60%" height="auto" style="display: block; margin-left: auto; margin-right: auto;">
+        </div>
+        <div id="home-markdown1" style="text-align:center;" class="show-list-numbers-and-dots">
+          <p style="color:#000000;font-size:10px;">{{link.title}}</p>
+        </div>
+      </div>
+    </div>
+    <div id="home-markdown8" ng-if="content.text2" class="show-list-numbers-and-dots">
+      <p style="color:#000000;">{{content.text2}}</p>
+    </div>
+    <form id="home-form7" class="list" ng-if="admin">
+      <label class="item item-input" id="home-input6">
+        <span class="input-label">Text</span>
+        <input type="text" placeholder="" ng-model="content.text2">
+      </label>
+      <button id="home-button7" ng-click="save()" ng-if="admin" class="button button-positive  button-block">Save</button>
+      <a ui-sref="menu.addIcons" id="home-button4" ng-if="admin" class="button button-positive  button-block">Add Icons</a>
+    </form>
+  </ion-content>
+</ion-view>

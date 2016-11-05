@@ -1,0 +1,37 @@
+<ion-view title="Content" id="page2">
+  <ion-nav-buttons side="right" class="has-header">
+    <button class="button icon No Icon" ng-click="toggleAdmin()"> Edit</button>
+  </ion-nav-buttons>
+  <ion-content padding="true" class="has-header">
+    <ion-refresher pulling-text="Pull to refresh..." icon="ios-small" on-refresh="doRefresh()"></ion-refresher>
+    <div id="content-container18" class="contentHeaderContainer">
+      <div>
+        <img src="{{content.image}}" width="100%" height="auto" style="display: block; margin-left: auto; margin-right: auto;" ng-if="content.image">
+      </div>
+    </div>
+    <div id="content-container20" class="contentBannerContainer">
+      <h3 id="content-heading2" style="color:#000000;" class="contentBannerHeading">{{content.title}}</h3>
+      <div id="content-markdown12" class="show-list-numbers-and-dots contentBannerSubHeading">
+        <p style="color:#000000;">{{content.subtitle}}</p>
+      </div>
+    </div>
+    <form id="content-form2" class="list" ng-if="admin">
+      <label class="item item-input">
+        <span class="input-label">Head Img</span>
+        <input type="file" accept="image/*" placeholder="" ng-model="HeaderImg" onchange="angular.element(this).scope().uploadImg(this.files)">
+      </label>
+      <label class="item item-input" id="content-input3">
+        <span class="input-label">Title</span>
+        <input type="text" placeholder="" ng-model="content.title">
+      </label>
+      <label class="item item-input" id="content-input4">
+        <span class="input-label">SubTitle</span>
+        <input type="text" placeholder="" ng-model="content.subtitle">
+      </label>
+      <label class="item item-input" id="content-textarea1">
+        <span class="input-label">Content</span><textarea placeholder="" ng-model="content.content"></textarea></label>
+      <button id="content-button5" ng-click="save()" class="button button-positive  button-block">Save</button>
+    </form>
+    <div id="content-markdown13" ng-bind-html="content.content" class="show-list-numbers-and-dots"></div>
+  </ion-content>
+</ion-view>
