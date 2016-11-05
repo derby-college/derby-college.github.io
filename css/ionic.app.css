@@ -9767,3 +9767,6 @@ a.button {
 .contentBannerSubHeading {
   margin: 0px;
   font-size: 0.8em; }
+
+.buttonText {
+  font-size: 0.6em; }
